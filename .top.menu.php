@@ -4,7 +4,7 @@ $aMenuLinks = Array(
 		"", 
 		"/", 
 		Array(), 
-		Array("IMG"=>"C:\\Server\\data\\htdocs\\bitrix\\templates\\.default\\images\\nv_home.png"), 
+		Array("IMG"=>"C:/Server/data/htdocs/bitrix/templates/.default/images/nv_home.png"), 
 		"" 
 	),
 	Array(

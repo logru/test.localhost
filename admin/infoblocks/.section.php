@@ -1,0 +1,6 @@
+<?
+$sSectionName = "инфоблоки";
+$arDirProperties = Array(
+
+);
+?>

@@ -8,7 +8,8 @@ function BeforeReg(&$arFields)
 	
 	if (isset($arFields['EMAIL']))
 	{
-		$s = strstr($arFields['EMAIL'],'@');
+		$ss = strstr($arFields['EMAIL'],'@');
+		$s = mb_strtolower($ss);
 		if($s == '@mail.ru' || $s == '@list.ru')
 		{
 			
@@ -46,9 +47,12 @@ function BeforeReg(&$arFields)
 		}
 	}
         
-    }
+    
 	
 	function searchAgent()
 	{
 		
+		
+		
 	}
+?>

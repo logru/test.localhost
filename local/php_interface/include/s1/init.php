@@ -1,8 +1,9 @@
 <?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)die();
 
+
+//CAgent::AddAgent("searchAgent()");
 AddEventHandler("main","OnBeforeUserRegister","BeforeReg");
 AddEventHandler("main", "OnAfterUserRegister", "yandexblock");
-
 function BeforeReg(&$arFields)
 {
 	
@@ -51,7 +52,19 @@ function BeforeReg(&$arFields)
 	
 	function searchAgent()
 	{
-		
+		$date1=date('j.m.Y H:i:s', strtotime('-24 hours'));
+		$date2=date('j.m.Y H:i:s');
+        
+
+        $arFilter = array(
+            'ID',
+            'LOGIN',
+            'DATE_REGISTER_1' => $date1,
+            'DATE_REGISTER_2' => $date2,
+        );
+        $Res = CUser::GetList($by = 'ID', $order = 'ASC', $arFilter);
+
+        CEvent::Send("EMAIL_USERS",'s1',$Res);
 		
 		
 	}
